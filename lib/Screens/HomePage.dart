@@ -9,8 +9,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(16),
-      child: ListView(
-        // Notes()
+      child: Column(
         children: [
           Row(
             children: [
@@ -36,32 +35,11 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(
-            height: 8,
-          ),
-          Notes(
-            color: Colors.lightBlueAccent,
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Notes(color: Colors.lime),
-          SizedBox(
-            height: 8,
-          ),
-          Notes(color: Colors.orangeAccent),
-          SizedBox(
-            height: 8,
-          ),
-          Notes(
-            color: Colors.yellow,
-          ),
-          SizedBox(
-            height: 8,
-          ),
-          Notes(
-            color: Colors.tealAccent,
-          ),
+          Expanded(child: ListView.builder(itemBuilder: (context, index) {
+            return Notes(
+              color: Colors.lightBlueAccent,
+            );
+          })),
         ],
       ),
     ));

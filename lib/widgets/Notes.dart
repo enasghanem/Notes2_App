@@ -7,7 +7,7 @@ class Notes extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.only(top: 16, left: 16, bottom: 16),
-      //   margin: const EdgeInsets.symmetric(horizontal: 8),
+      margin: const EdgeInsets.symmetric(vertical: 4),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         color: color,
@@ -37,7 +37,7 @@ class Notes extends StatelessWidget {
                     color: Colors.black,
                   ))),
           Padding(
-            padding: const EdgeInsets.only(left: 192),
+            padding: const EdgeInsets.only(left: 240),
             child: Text(
               'May 2025-1-15',
               style: TextStyle(color: Colors.black.withOpacity(0.5)),
