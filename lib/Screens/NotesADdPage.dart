@@ -23,7 +23,7 @@ class NewNotes extends StatelessWidget {
             const SizedBox(
               height: 15,
             ),
-            CustomTextFeild(text: 'Add Notes', maxline: 50, minline: 22),
+            CustomTextFeild(text: 'Add Notes', maxline: 23, minline: 22),
           ],
         ),
       ),

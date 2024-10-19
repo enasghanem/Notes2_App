@@ -1,8 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:notes_app/helpers/Constants.dart';
 
-part 'NotesModels.g.dart'; // تأكد من أن الامتداد صحيح
+part 'NotesModels.g.dart';
 
 @HiveType(typeId: 0) // typeAdapter
 class NotesModel extends HiveObject {
@@ -16,12 +15,14 @@ class NotesModel extends HiveObject {
   final String date;
 
   @HiveField(3)
-  final int coloe; // قد ترغب في تصحيح اسم هذا المتغير إلى "color"
+  final int coloe;
 
   NotesModel({
     required this.title,
     required this.subtitle,
     required this.date,
-    required this.coloe, // تأكد من تعديل الاسم هنا أيضًا إذا صححته
+    required this.coloe,
   });
 }
+// after end from the top 
+//write in new terminal flutter pub run build_runner build --delete-conflicting-outputs
