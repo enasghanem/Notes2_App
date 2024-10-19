@@ -1,4 +1,6 @@
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
+import 'package:notes_app/helpers/Constants.dart';
 
 part 'NotesModels.g.dart'; // تأكد من أن الامتداد صحيح
 
