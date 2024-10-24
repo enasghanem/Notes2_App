@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/Cubits/AddNotesCubit.dart';
+import 'package:notes_app/Cubits/Add_Notest_State.dart';
 import 'package:notes_app/Models/NotesModels.dart';
 import 'package:notes_app/widgets/ADDButton.dart';
 import 'package:notes_app/widgets/CustomTextFeild.dart';
@@ -47,26 +48,32 @@ class _AddNotesFormState extends State<AddNotesForm> {
           const SizedBox(
             height: 24,
           ),
-          AddButton(
-            onTap: () {
-              //question
-              if (formkey.currentState!.validate()) {
-                formkey.currentState!.save();
+          BlocBuilder<AddNotesCubit, AddNotestState>(
+            builder: (context, state) {
+              return AddButton(
+                onTap: () {
+                  //question
+                  if (formkey.currentState!.validate()) {
+                    formkey.currentState!.save();
 
-                var notesModel = NotesModel(
-                    title: title!,
-                    subtitle: subtitle!,
-                    date: DateTime.now().toString(),
-                    color: Colors.green.value);
-                print(notesModel);
-                // بحث عن الـ Cubit الذي تم توفيره
+                    var notesModel = NotesModel(
+                        title: title!,
+                        subtitle: subtitle!,
+                        date: DateTime.now().toString(),
+                        color: Colors.green.value);
+                    print(notesModel);
+                    // بحث عن الـ Cubit الذي تم توفيره
 
-                BlocProvider.of<AddNotesCubit>(context).addnotes(notesModel);
-                /************************** */
-              } else {
-                autovalidateMode = AutovalidateMode.always;
-                setState(() {});
-              }
+                    BlocProvider.of<AddNotesCubit>(context)
+                        .addnotes(notesModel);
+                    /************************** */
+                  } else {
+                    autovalidateMode = AutovalidateMode.always;
+                    setState(() {});
+                  }
+                },
+                isLoading: true,
+              );
             },
           )
         ],

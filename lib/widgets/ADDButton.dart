@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class AddButton extends StatelessWidget {
-  AddButton({super.key, required this.onTap});
+  AddButton({super.key, required this.onTap, required this.isLoading});
   void Function()? onTap;
+  final bool isLoading;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -18,11 +20,19 @@ class AddButton extends StatelessWidget {
         ),
         height: 50,
         width: double.infinity,
-        child: const Center(
-          child: Text(
-            'ADD',
-            // style: TextStyle(color: Colors.white),
-          ),
+        child: Center(
+          child: isLoading
+              ?SizedBox(
+                height: 30,
+                width: 30,
+                child: const CircularProgressIndicator(
+                    color: Colors.black,
+                  ),
+              )
+              :const Text(
+                  'ADD',
+                  // style: TextStyle(color: Colors.white),
+                ),
         ),
       ),
     );
