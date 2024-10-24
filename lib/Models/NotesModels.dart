@@ -15,14 +15,12 @@ class NotesModel extends HiveObject {
   final String date;
 
   @HiveField(3)
-  final int coloe;
+  final int color;
 
   NotesModel({
     required this.title,
     required this.subtitle,
     required this.date,
-    required this.coloe,
+    required this.color,
   });
 }
-// after end from the top 
-//write in new terminal flutter pub run build_runner build --delete-conflicting-outputs

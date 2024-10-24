@@ -1,5 +1,7 @@
 class AddNotestState {}
 
+class AddNotesIn extends AddNotestState {}
+
 class AddNotesLoading extends AddNotestState {}
 
 class AddNotesSuccess extends AddNotestState {}

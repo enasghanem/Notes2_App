@@ -29,11 +29,11 @@ class CustomTextFeild extends StatelessWidget {
       minLines: minline,
       decoration: InputDecoration(
         hintText: text,
-        focusedBorder: OutlineInputBorder(
+        focusedBorder: const OutlineInputBorder(
             borderSide: BorderSide(
           color: kcolor,
         )),
-        border: OutlineInputBorder(),
+        border: const OutlineInputBorder(),
       ),
     );
   }
